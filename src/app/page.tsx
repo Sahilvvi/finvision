@@ -117,110 +117,168 @@ export default function HomePage() {
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto space-y-16">
-          {/* Header row with arrows */}
-          <div className="flex flex-col md:flex-row items-end justify-between gap-6">
-            <div className="space-y-4 max-w-2xl text-center md:text-left">
-              <span className="px-4 py-1.5 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/15 rounded-full text-xs font-bold uppercase tracking-widest font-display">
-                Our Curated Curriculum
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tight leading-tight">
-                Courses Designed for <span className="text-gradient-gold">Real-World Financial Skills</span>
-              </h2>
-            </div>
-            
-            {/* Carousel control arrows */}
-            <div className="flex gap-3 self-center md:self-end">
-              <button 
-                onClick={() => scrollCourses("left")}
-                className="w-12 h-12 rounded-full border border-white/10 hover:border-accent-yellow bg-slate-900 flex items-center justify-center text-white transition-all cursor-pointer focus:outline-none hover:scale-105 active:scale-95"
-              >
-                ←
-              </button>
-              <button 
-                onClick={() => scrollCourses("right")}
-                className="w-12 h-12 rounded-full border border-white/10 hover:border-accent-yellow bg-slate-900 flex items-center justify-center text-white transition-all cursor-pointer focus:outline-none hover:scale-105 active:scale-95"
-              >
-                →
-              </button>
+          {/* Centered Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <span className="px-4 py-1.5 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/15 rounded-full text-xs font-bold uppercase tracking-widest font-display inline-block">
+              Our Curated Curriculum
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-display text-white tracking-tight leading-tight">
+              Courses Designed for <span className="text-gradient-gold">Real-World Financial Skills</span>
+            </h2>
+          </div>
+
+          {/* Centered inline text tabs with a premium sliding capsule */}
+          <div className="flex justify-center pt-4">
+            <div className="flex flex-wrap items-center justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner">
+              {categories.map((cat) => {
+                const isActive = activeCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-5 py-2.5 rounded-xl md:rounded-full text-xs font-bold font-display tracking-widest transition-all duration-300 uppercase relative cursor-pointer select-none ${
+                      isActive ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-white"
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeCategoryBg"
+                        className="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 rounded-xl md:rounded-full shadow-lg shadow-yellow-500/20 z-0"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative z-10">{cat}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Centered inline text tabs */}
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 border-b border-white/5 pb-6">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`text-xs md:text-sm font-bold font-display tracking-wider transition-all relative pb-3 uppercase cursor-pointer ${
-                    isActive ? "text-accent-yellow font-extrabold" : "text-txt-secondary hover:text-white"
-                  }`}
-                >
-                  {cat}
-                  {isActive && (
+          {/* Horizontal Snap Scroll Carousel with Hover Arrows and Entry Animations */}
+          <div className="relative group/carousel mt-12">
+            {/* Absolute Left Floating Arrow Button */}
+            <button
+              onClick={() => scrollCourses("left")}
+              className="absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer opacity-0 pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:left-4"
+              aria-label="Previous courses"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Absolute Right Floating Arrow Button */}
+            <button
+              onClick={() => scrollCourses("right")}
+              className="absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer opacity-0 pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:right-4"
+              aria-label="Next courses"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Animated Cards Container */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCategory}
+                variants={{
+                  hidden: { opacity: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.08
+                    }
+                  }
+                }}
+                initial="hidden"
+                animate="show"
+                ref={coursesCarouselRef}
+                className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory px-2"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {filteredCourses.map((course) => {
+                  const theme = getCourseTheme(course.id);
+                  return (
                     <motion.div
-                      layoutId="activeCategoryLine"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent-yellow"
-                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Horizontal Snap Scroll Carousel */}
-          <div 
-            ref={coursesCarouselRef}
-            className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory px-2"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {filteredCourses.map((course) => {
-              const theme = getCourseTheme(course.id);
-              return (
-                <div 
-                  key={course.id} 
-                  className={`w-[295px] md:w-[330px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col justify-between group relative ${theme.glowClass}`}
-                >
-                  <div className="p-8 pb-4 space-y-6 relative">
-                    {/* Top-Right Decorative SVG Geometry */}
-                    {theme.svg}
-
-                    {/* Badge */}
-                    <span className={`inline-block text-[9px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border ${theme.badgeClass}`}>
-                      {theme.badgeText}
-                    </span>
-
-                    {/* Course Title */}
-                    <h3 className="text-xl md:text-2xl font-black font-display text-white tracking-tight leading-snug group-hover:text-accent-yellow transition-colors pt-2 max-w-[85%]">
-                      {course.title}
-                    </h3>
-
-                    {/* Mode row */}
-                    <div className="flex items-center gap-2 text-[11px] font-bold text-white/95 bg-white/5 w-fit px-3 py-1.5 rounded-lg border border-white/5">
-                      <LaptopIcon />
-                      <span>Mode: {course.mode}</span>
-                    </div>
-
-                    {/* Short Description */}
-                    <p className="text-xs text-txt-secondary leading-relaxed font-medium line-clamp-4">
-                      {course.shortDescription}
-                    </p>
-                  </div>
-
-                  {/* Single LEARN MORE Outline Button at the bottom */}
-                  <div className="p-8 pt-0 mt-2">
-                    <Link
-                      href={`/courses/${course.slug}`}
-                      className={`block w-full py-3.5 border text-center text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 cursor-pointer ${theme.btnClass}`}
+                      key={course.id}
+                      variants={{
+                        hidden: { y: 24, opacity: 0 },
+                        show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 120, damping: 14 } }
+                      }}
+                      whileHover={{ y: -8, scale: 1.01 }}
+                      className={`w-[300px] md:w-[350px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col justify-between group relative border border-white/5 hover:border-white/10 transition-all duration-300 ${theme.glowClass}`}
                     >
-                      LEARN MORE
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                      <div className="p-8 pb-4 space-y-6 relative flex-1 flex flex-col">
+                        {/* Top-Right Decorative SVG Geometry */}
+                        {theme.svg}
+
+                        {/* Badge */}
+                        <span className={`inline-block text-[9px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border w-fit ${theme.badgeClass}`}>
+                          {theme.badgeText}
+                        </span>
+
+                        {/* Course Title */}
+                        <h3 className="text-xl md:text-2xl font-black font-display text-white tracking-tight leading-snug group-hover:text-accent-yellow transition-colors pt-2 max-w-[85%]">
+                          {course.title}
+                        </h3>
+
+                        {/* Facts Row: Duration and Level/Rating */}
+                        <div className="flex flex-wrap items-center gap-3 pt-1">
+                          <div className="flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-txt-secondary bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
+                            <svg className="w-3.5 h-3.5 text-accent-yellow" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>{course.duration}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-txt-secondary bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
+                            <svg className="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <span>{course.rating} Rating</span>
+                          </div>
+                        </div>
+
+                        {/* Mode row */}
+                        <div className="flex items-center gap-2 text-[11px] font-bold text-white/95 bg-white/5 w-fit px-3 py-1.5 rounded-lg border border-white/5">
+                          <LaptopIcon />
+                          <span>Mode: {course.mode}</span>
+                        </div>
+
+                        {/* Short Description */}
+                        <p className="text-xs text-txt-secondary leading-relaxed font-medium line-clamp-3">
+                          {course.shortDescription}
+                        </p>
+
+                        <div className="border-t border-white/5 my-2 w-full" />
+
+                        {/* Course Highlights Bullet List */}
+                        <div className="space-y-2 flex-1">
+                          <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest block">Core Highlights:</span>
+                          {course.highlights.slice(0, 2).map((h, i) => (
+                            <div key={i} className="flex items-start gap-2 text-[11px] text-white/90">
+                              <span className="text-accent-yellow mt-0.5">•</span>
+                              <span className="leading-snug">{h}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Single LEARN MORE Outline Button at the bottom */}
+                      <div className="p-8 pt-0 mt-2">
+                        <Link
+                          href={`/courses/${course.slug}`}
+                          className={`block w-full py-3.5 border text-center text-xs font-black uppercase tracking-widest rounded-full transition-all duration-300 cursor-pointer ${theme.btnClass} group-hover:scale-[1.02] flex items-center justify-center gap-2`}
+                        >
+                          <span>LEARN MORE</span>
+                          <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
