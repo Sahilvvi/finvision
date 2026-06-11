@@ -69,29 +69,31 @@ export default function Navbar() {
             scrolled ? "h-0 py-0 border-none opacity-0" : "h-9 py-2"
           }`}
         >
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={activeAnnIndex}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="text-[9px] sm:text-xs font-semibold tracking-wide text-txt-secondary text-center px-4 truncate max-w-full block"
-            >
-              <span className="text-accent-yellow font-bold mr-2 uppercase">Update:</span>
-              {announcements[activeAnnIndex]}
-            </motion.p>
-          </AnimatePresence>
+          <div className="w-full max-w-7xl mx-auto px-4 overflow-hidden flex items-center justify-center min-w-0">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeAnnIndex}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="text-[9px] sm:text-xs font-semibold tracking-wide text-txt-secondary text-center truncate w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl block"
+              >
+                <span className="text-accent-yellow font-bold mr-2 uppercase">Update:</span>
+                {announcements[activeAnnIndex]}
+              </motion.p>
+            </AnimatePresence>
+          </div>
         </div>
 
-        <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${scrolled ? "" : "pt-4 pb-4"}`}>
+        <div className={`w-full max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${scrolled ? "" : "pt-4 pb-4"}`}>
           {/* Logo */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 shrink-0">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center shadow-lg shadow-brand-blue/20 transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center shadow-lg shadow-brand-blue/20 transition-transform group-hover:scale-105 shrink-0">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-extrabold font-display tracking-tight text-white">
+              <span className="text-xl font-extrabold font-display tracking-tight text-white shrink-0">
                 FIN<span className="text-accent-yellow">VISION</span>
               </span>
             </Link>
@@ -116,7 +118,7 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             <button
               onClick={handleBooking}
               className="cursor-pointer rounded-full border border-brand-blue hover:bg-brand-blue hover:text-white px-5 py-2 text-xs font-bold transition-all text-brand-blue uppercase tracking-wider"
@@ -135,7 +137,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-txt-secondary hover:text-white transition-colors"
+            className="lg:hidden p-2 text-txt-secondary hover:text-white transition-colors shrink-0"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -149,7 +151,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 pt-24 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg lg:hidden flex flex-col justify-between overflow-y-auto gap-8"
+            className="fixed inset-0 z-30 pt-28 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg lg:hidden flex flex-col justify-start overflow-y-auto gap-8"
           >
             <nav className="flex flex-col gap-6">
               {navLinks.map((link) => {
@@ -169,7 +171,7 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-auto">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -183,7 +185,7 @@ export default function Navbar() {
                 href="https://wa.me/919999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-center font-bold rounded-xl shadow-lg transition-all duration-300 block"
+                className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-center font-bold rounded-xl shadow-lg transition-all duration-300 block text-center"
               >
                 Chat on WhatsApp
               </a>

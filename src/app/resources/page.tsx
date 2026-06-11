@@ -91,7 +91,7 @@ export default function ResourcesPage() {
           {/* Resources Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filteredResources.map((res) => (
-              <div key={res.id} className="p-8 rounded-3xl card-glass flex flex-col justify-between group">
+              <div key={res.id} className="p-6 sm:p-8 rounded-3xl card-glass flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-[10px] font-bold font-display text-brand-blue uppercase tracking-widest bg-brand-blue/10 px-2.5 py-1 rounded-full border border-brand-blue/20">
@@ -160,7 +160,7 @@ export default function ResourcesPage() {
 
       {/* Newsletter Section */}
       <section className="py-24 bg-slate-950/50 border-t border-white/5 px-6 relative">
-        <div className="max-w-4xl mx-auto rounded-3xl card-glass p-8 md:p-16 text-center space-y-6 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto rounded-3xl card-glass p-6 sm:p-8 md:p-16 text-center space-y-6 relative overflow-hidden">
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
           
           <span className="px-3 py-1 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 rounded-full text-xs font-bold uppercase tracking-widest font-display inline-block">

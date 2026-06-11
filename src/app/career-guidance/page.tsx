@@ -117,7 +117,7 @@ export default function CareerGuidancePage() {
             {services.map((service, idx) => {
               const Icon = service.icon;
               return (
-                <div key={idx} className="p-8 rounded-3xl card-glass flex flex-col sm:flex-row gap-6 items-start">
+                <div key={idx} className="p-6 sm:p-8 rounded-3xl card-glass flex flex-col sm:flex-row gap-6 items-start">
                   <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-accent-yellow shrink-0">
                     <Icon className="w-6 h-6" />
                   </div>
@@ -173,7 +173,7 @@ export default function CareerGuidancePage() {
 
           {/* Form wrapper */}
           <div className="lg:col-span-6">
-            <div className="p-8 rounded-3xl card-glass shadow-2xl relative overflow-hidden">
+            <div className="p-6 sm:p-8 rounded-3xl card-glass shadow-2xl relative overflow-hidden">
               {submitted ? (
                 <div className="py-12 text-center">
                   <div className="w-16 h-16 bg-accent-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">

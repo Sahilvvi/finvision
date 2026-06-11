@@ -124,7 +124,7 @@ export default function ContactPage() {
 
           {/* Form Card */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-3xl card-glass shadow-2xl relative">
+            <div className="p-6 sm:p-8 rounded-3xl card-glass shadow-2xl relative">
               {submitted ? (
                 <div className="py-16 text-center">
                   <div className="w-16 h-16 bg-accent-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">

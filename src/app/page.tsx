@@ -128,15 +128,15 @@ export default function HomePage() {
           </div>
 
           {/* Centered inline text tabs with a premium sliding capsule */}
-          <div className="flex justify-center pt-4">
-            <div className="flex flex-wrap items-center justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner">
+          <div className="flex justify-center pt-4 w-full max-w-full overflow-hidden px-4">
+            <div className="flex overflow-x-auto md:overflow-x-visible md:flex-wrap items-center justify-start md:justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner w-full max-w-full hide-scrollbar flex-nowrap md:flex-wrap">
               {categories.map((cat) => {
                 const isActive = activeCategory === cat;
                 return (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-5 py-2.5 rounded-xl md:rounded-full text-xs font-bold font-display tracking-widest transition-all duration-300 uppercase relative cursor-pointer select-none ${
+                    className={`px-5 py-2.5 rounded-xl md:rounded-full text-xs font-bold font-display tracking-widest transition-all duration-300 uppercase relative cursor-pointer select-none shrink-0 ${
                       isActive ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-white"
                     }`}
                   >
@@ -298,8 +298,8 @@ export default function HomePage() {
             </h2>
 
             {/* Clickable inline text tabs for Why Us - capsule sliding selector */}
-            <div className="flex justify-center pt-8">
-              <div className="flex flex-wrap items-center justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner">
+            <div className="flex justify-center pt-8 w-full max-w-full overflow-hidden px-4">
+              <div className="flex overflow-x-auto md:overflow-x-visible md:flex-wrap items-center justify-start md:justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner w-full max-w-full hide-scrollbar flex-nowrap md:flex-wrap">
                 {[
                   "Guided by Experts",
                   "Learn on Live Markets",
@@ -311,7 +311,7 @@ export default function HomePage() {
                     <button
                       key={tab}
                       onClick={() => scrollWhyUs(index)}
-                      className={`px-5 py-2.5 rounded-xl md:rounded-full text-xs font-bold font-display tracking-widest transition-all duration-300 uppercase relative cursor-pointer select-none ${
+                      className={`px-5 py-2.5 rounded-xl md:rounded-full text-xs font-bold font-display tracking-widest transition-all duration-300 uppercase relative cursor-pointer select-none shrink-0 ${
                         isActive ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-white"
                       }`}
                     >
@@ -626,7 +626,7 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto relative z-10 space-y-16">
           {/* Header */}
-          <div className="flex flex-col md:flex-row items-end justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
             <h2 className="text-4xl md:text-5xl font-black font-display text-white tracking-tight leading-tight">
               Why Finance Aspirants <br />
               <span className="text-gradient-gold">Vouch for Us...</span>
