@@ -95,7 +95,7 @@ export default function HomePage() {
         </div>
 
         {/* Center centered text in the middle */}
-        <div className="relative z-20 flex min-h-[95vh] items-center justify-center px-6 w-full text-center">
+        <div className="relative z-20 flex min-h-[95vh] items-center justify-center px-6 pt-28 sm:pt-36 pb-12 w-full text-center">
           <div className="max-w-5xl space-y-6">
             <motion.h1 
               initial={{ y: 30, opacity: 0 }}

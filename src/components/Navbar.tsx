@@ -76,7 +76,7 @@ export default function Navbar() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-[10px] md:text-xs font-semibold tracking-wide text-txt-secondary text-center"
+              className="text-[9px] sm:text-xs font-semibold tracking-wide text-txt-secondary text-center px-4 truncate max-w-full block"
             >
               <span className="text-accent-yellow font-bold mr-2 uppercase">Update:</span>
               {announcements[activeAnnIndex]}
@@ -98,7 +98,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -116,7 +116,7 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={handleBooking}
               className="cursor-pointer rounded-full border border-brand-blue hover:bg-brand-blue hover:text-white px-5 py-2 text-xs font-bold transition-all text-brand-blue uppercase tracking-wider"
@@ -135,7 +135,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-txt-secondary hover:text-white transition-colors"
+            className="lg:hidden p-2 text-txt-secondary hover:text-white transition-colors"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -149,7 +149,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 pt-24 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg md:hidden flex flex-col justify-between overflow-y-auto gap-8"
+            className="fixed inset-0 z-30 pt-24 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg lg:hidden flex flex-col justify-between overflow-y-auto gap-8"
           >
             <nav className="flex flex-col gap-6">
               {navLinks.map((link) => {
