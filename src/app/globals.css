@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  /* Luxury Midnight Navy Backgrounds */
+  --background: #02040a;
+  --foreground: #ffffff;
+  
+  /* Sapphire / Cobalt Blue base */
+  --primary: #1d4ed8; /* Blue 700 */
+  --primary-hover: #1e40af; /* Blue 800 */
+  
+  /* Metallic Gold highlights & accents */
+  --accent: #FBBF24; /* Amber 400 */
+  --accent-hover: #F59E0B; /* Amber 500 */
+  --accent-foreground: #02040a;
+  
+  /* Translucent overlays for premium glass cards */
+  --card-bg: rgba(5, 10, 24, 0.55);
+  --card-border: rgba(255, 255, 255, 0.04);
+  --glass-bg: rgba(3, 7, 20, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8; /* Slate-400 */
+  --text-muted: #475569; /* Slate-600 */
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-brand-blue: var(--primary);
+  --color-brand-blue-hover: var(--primary-hover);
+  
+  --color-accent-yellow: var(--accent);
+  --color-accent-yellow-hover: var(--accent-hover);
+  --color-accent-yellow-fg: var(--accent-foreground);
+  
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  
+  --color-txt-primary: var(--text-primary);
+  --color-txt-secondary: var(--text-secondary);
+  --color-txt-muted: var(--text-muted);
+  
+  --font-sans: var(--font-sans-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base layouts */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Premium overlapping radial mesh gradients to make the background feel alive */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle 300px at 50% 50%, rgba(29, 78, 216, 0.12), transparent 80%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 400px;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle 250px at 50% 50%, rgba(245, 158, 11, 0.03), transparent 75%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Metallic Gold text gradient styling */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* High-end glass card with glow and border transitions */
+.glass-card-premium {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-premium:hover {
+  border-color: rgba(251, 191, 36, 0.2); /* Glow border on hover */
+  background: rgba(6, 12, 28, 0.7);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -15px rgba(251, 191, 36, 0.08), 0 0 50px -10px rgba(29, 78, 216, 0.1);
+}
+
+/* Glass effect utilities */
+.glass-effect-header {
+  background: rgba(2, 4, 10, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Mesh glow bubbles to insert inside section backgrounds */
+.mesh-glow-blue {
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.15) 0%, transparent 70%);
+}
+
+.mesh-glow-gold {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+}
+
+/* Custom scrollbars matching the dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02040a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111827; /* Gray 900 */
+  border: 2px solid #02040a;
+  border-radius: 9999px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f2937; /* Gray 800 */
+}
+
+/* Hide scrollbar utilities */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
