@@ -102,7 +102,7 @@ export default function HomePage() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ textShadow: "0 4px 32px rgba(2, 4, 10, 0.95), 0 2px 12px rgba(2, 4, 10, 0.9)" }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tight text-white leading-[1.1] uppercase drop-shadow-[0_4px_24px_rgba(2,4,10,0.95)]"
+              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black font-display tracking-tight text-white leading-[1.1] uppercase drop-shadow-[0_4px_24px_rgba(2,4,10,0.95)]"
             >
               Learn What Finance<br />
               <span className="text-gradient-gold">Really Feels Like</span>
@@ -194,7 +194,7 @@ export default function HomePage() {
                 initial="hidden"
                 animate="show"
                 ref={coursesCarouselRef}
-                className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory px-2"
+                className="flex gap-8 overflow-x-auto pb-8 hide-scrollbar scroll-smooth snap-x snap-mandatory px-2"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {filteredCourses.map((course) => {
@@ -207,7 +207,7 @@ export default function HomePage() {
                         show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 120, damping: 14 } }
                       }}
                       whileHover={{ y: -8, scale: 1.01 }}
-                      className={`w-[300px] md:w-[350px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col justify-between group relative border border-white/5 hover:border-white/10 transition-all duration-300 ${theme.glowClass}`}
+                      className={`w-[280px] sm:w-[320px] md:w-[350px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col justify-between group relative border border-white/5 hover:border-white/10 transition-all duration-300 ${theme.glowClass}`}
                     >
                       <div className="p-8 pb-4 space-y-6 relative flex-1 flex flex-col">
                         {/* Top-Right Decorative SVG Geometry */}
@@ -297,45 +297,47 @@ export default function HomePage() {
               From Learning to Leadership in Finance
             </h2>
 
-            {/* Clickable inline text tabs for Why Us */}
-            <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 pt-8 border-b border-white/5 pb-4">
-              {[
-                "Guided by Experts",
-                "Learn on Live Markets",
-                "Network That Hires",
-                "Land Your Finance Role"
-              ].map((tab, index) => {
-                const isActive = activeWhyUsTab === index;
-                return (
-                  <button
-                    key={tab}
-                    onClick={() => scrollWhyUs(index)}
-                    className={`text-xs md:text-sm font-bold font-display tracking-wider transition-all relative pb-3 uppercase cursor-pointer ${
-                      isActive ? "text-accent-yellow font-extrabold" : "text-txt-secondary hover:text-white"
-                    }`}
-                  >
-                    {tab}
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeWhyUsLine"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent-yellow"
-                        transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                      />
-                    )}
-                  </button>
-                );
-              })}
+            {/* Clickable inline text tabs for Why Us - capsule sliding selector */}
+            <div className="flex justify-center pt-8">
+              <div className="flex flex-wrap items-center justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner">
+                {[
+                  "Guided by Experts",
+                  "Learn on Live Markets",
+                  "Network That Hires",
+                  "Land Your Finance Role"
+                ].map((tab, index) => {
+                  const isActive = activeWhyUsTab === index;
+                  return (
+                    <button
+                      key={tab}
+                      onClick={() => scrollWhyUs(index)}
+                      className={`px-5 py-2.5 rounded-xl md:rounded-full text-xs font-bold font-display tracking-widest transition-all duration-300 uppercase relative cursor-pointer select-none ${
+                        isActive ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-white"
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeWhyUsBg"
+                          className="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 rounded-xl md:rounded-full shadow-lg shadow-yellow-500/20 z-0"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                      <span className="relative z-10">{tab}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* Horizontal Snap Scroll Cards track */}
           <div 
             ref={whyUsCarouselRef}
-            className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory px-2"
+            className="flex gap-8 overflow-x-auto pb-8 hide-scrollbar scroll-smooth snap-x snap-mandatory px-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {/* Card 1: Guided by Experts */}
-            <div className="w-[305px] md:w-[490px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-brand-blue/30 shadow-[0_0_30px_rgba(10,102,255,0.02)]">
+            <div className="w-[280px] sm:w-[340px] md:w-[490px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-brand-blue/30 shadow-[0_0_30px_rgba(10,102,255,0.02)]">
               <div className="p-8 flex-1 flex flex-col justify-between bg-gradient-to-br from-brand-blue/20 to-indigo-950/60">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-black font-display text-white leading-tight">
@@ -359,7 +361,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2: Learn on Live Markets */}
-            <div className="w-[325px] md:w-[690px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-purple-500/30 shadow-[0_0_30px_rgba(147,51,234,0.02)]">
+            <div className="w-[280px] sm:w-[340px] md:w-[690px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-purple-500/30 shadow-[0_0_30px_rgba(147,51,234,0.02)]">
               <div className="p-8 flex-[0.8] flex flex-col justify-between bg-gradient-to-br from-purple-900/30 to-slate-950/70">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-3xl font-black font-display text-white leading-tight">
@@ -383,7 +385,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 3: Network That Hires */}
-            <div className="w-[305px] md:w-[550px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-orange-500/30 shadow-[0_0_30px_rgba(249,115,22,0.02)]">
+            <div className="w-[280px] sm:w-[340px] md:w-[550px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-orange-500/30 shadow-[0_0_30px_rgba(249,115,22,0.02)]">
               <div className="p-8 flex-1 flex flex-col justify-between bg-gradient-to-br from-orange-900/20 to-slate-950/70">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-black font-display text-white leading-tight">
@@ -407,7 +409,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 4: Land Your Finance Role */}
-            <div className="w-[305px] md:w-[510px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.02)]">
+            <div className="w-[280px] sm:w-[340px] md:w-[510px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.02)]">
               <div className="p-8 flex-1 flex flex-col justify-between bg-gradient-to-br from-emerald-900/20 to-slate-950/70">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-black font-display text-white leading-tight">
@@ -473,7 +475,7 @@ export default function HomePage() {
           {/* Comparison Block */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8">
             {/* Left comparison dials */}
-            <div className="lg:col-span-5 flex items-center justify-center gap-8 md:gap-12 p-8 rounded-3xl bg-[#050a18]/45 border border-white/5 shadow-inner">
+            <div className="lg:col-span-5 flex flex-wrap sm:flex-nowrap items-center justify-center gap-4 sm:gap-8 md:gap-12 p-4 sm:p-8 rounded-3xl bg-[#050a18]/45 border border-white/5 shadow-inner">
               
               {/* Finvision Dial */}
               <div className="flex flex-col items-center space-y-4">
@@ -564,7 +566,7 @@ export default function HomePage() {
           </div>
 
           {/* Core Profile Banner Container */}
-          <div className="glass-card-premium p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden border border-white/5">
+          <div className="glass-card-premium p-4 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden border border-white/5">
             {/* Subtle glow background */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -647,10 +649,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Testimonial Cards Carousel Track */}
           <div 
             ref={scrollRef}
-            className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory px-2"
+            className="flex gap-8 overflow-x-auto pb-8 hide-scrollbar scroll-smooth snap-x snap-mandatory px-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {[
@@ -677,7 +678,7 @@ export default function HomePage() {
             ].map((testi, idx) => (
               <div 
                 key={idx} 
-                className="w-[285px] md:w-[330px] shrink-0 snap-start glass-card-premium p-8 flex flex-col justify-between group border border-white/5 shadow-[0_0_30px_rgba(251,191,36,0.01)] hover:border-accent-yellow/20"
+                className="w-[280px] sm:w-[320px] md:w-[330px] shrink-0 snap-start glass-card-premium p-8 flex flex-col justify-between group border border-white/5 shadow-[0_0_30px_rgba(251,191,36,0.01)] hover:border-accent-yellow/20"
               >
                 <div className="space-y-6">
                   {/* Quote Icon */}
@@ -767,7 +768,7 @@ export default function HomePage() {
 
       {/* Mobile App Section */}
       <section className="py-32 bg-slate-950/40 border-t border-white/5 px-6">
-        <div className="max-w-7xl mx-auto rounded-3xl glass-card-premium p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden border border-white/5">
+        <div className="max-w-7xl mx-auto rounded-3xl glass-card-premium p-4 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden border border-white/5">
           {/* Decorative gradients */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
           
