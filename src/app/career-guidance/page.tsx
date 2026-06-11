@@ -117,7 +117,7 @@ export default function CareerGuidancePage() {
             {services.map((service, idx) => {
               const Icon = service.icon;
               return (
-                <div key={idx} className="p-8 rounded-3xl card-glass flex gap-6">
+                <div key={idx} className="p-8 rounded-3xl card-glass flex flex-col sm:flex-row gap-6 items-start">
                   <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-accent-yellow shrink-0">
                     <Icon className="w-6 h-6" />
                   </div>

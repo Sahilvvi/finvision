@@ -149,7 +149,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 pt-24 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg md:hidden flex flex-col justify-between"
+            className="fixed inset-0 z-30 pt-24 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg md:hidden flex flex-col justify-between overflow-y-auto gap-8"
           >
             <nav className="flex flex-col gap-6">
               {navLinks.map((link) => {

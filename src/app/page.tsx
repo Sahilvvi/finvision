@@ -462,7 +462,7 @@ export default function HomePage() {
               { val: "12+", lbl: "Countries", sub: "Where alumni work" },
               { val: "50K+", lbl: "Students Trained", sub: "Since 2010" }
             ].map((stat, idx) => (
-              <div key={idx} className="glass-card-premium p-8 text-center flex flex-col justify-center border border-white/5">
+              <div key={idx} className={`glass-card-premium p-8 text-center flex flex-col justify-center border border-white/5 ${idx === 4 ? "col-span-2 md:col-span-1" : ""}`}>
                 <span className="text-3xl md:text-4xl lg:text-5xl font-black font-display text-white text-gradient-gold">{stat.val}</span>
                 <span className="text-[11px] font-black text-white uppercase tracking-widest mt-3">{stat.lbl}</span>
                 <span className="text-[10px] text-txt-secondary mt-1">{stat.sub}</span>
