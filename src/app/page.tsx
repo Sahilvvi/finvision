@@ -159,7 +159,7 @@ export default function HomePage() {
             {/* Absolute Left Floating Arrow Button */}
             <button
               onClick={() => scrollCourses("left")}
-              className="absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer opacity-0 pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:left-4"
+              className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer lg:opacity-0 lg:pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:left-4"
               aria-label="Previous courses"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -170,7 +170,7 @@ export default function HomePage() {
             {/* Absolute Right Floating Arrow Button */}
             <button
               onClick={() => scrollCourses("right")}
-              className="absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white flex items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer opacity-0 pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:right-4"
+              className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer lg:opacity-0 lg:pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:right-4"
               aria-label="Next courses"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
