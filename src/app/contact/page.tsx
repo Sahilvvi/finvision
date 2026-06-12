@@ -45,9 +45,9 @@ export default function ContactPage() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-white/10 to-transparent blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <span className="px-3 py-1 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+          <span className="px-3 py-1 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
             Contact Channels
           </span>
           <h1 className="text-4xl md:text-6xl font-black font-display text-white tracking-tight leading-tight">
@@ -77,7 +77,7 @@ export default function ContactPage() {
 
             <div className="space-y-6 pt-4">
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -114,8 +114,8 @@ export default function ContactPage() {
             </div>
 
             {/* Simulated Maps Placeholder with Dark Theme styling */}
-            <div className="rounded-3xl border border-white/5 bg-slate-950/50 p-6 flex flex-col justify-center items-center text-center h-48 relative overflow-hidden">
-              <div className="absolute inset-0 bg-radial from-brand-blue/5 to-transparent pointer-events-none" />
+            <div className="rounded-3xl border border-white/5 bg-transparent p-6 flex flex-col justify-center items-center text-center h-48 relative overflow-hidden">
+              <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
               <MapPin className="w-8 h-8 text-accent-yellow mb-2 animate-bounce" />
               <span className="text-xs font-bold text-white mb-1">Google Maps Interactive</span>
               <span className="text-[10px] text-txt-secondary">Map API disabled for Local Preview v1</span>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                         placeholder="e.g. Priyesh Sen"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                        className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                       />
                     </div>
                     <div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                         placeholder="e.g. +91 99999 88888"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                        className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                       />
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                       placeholder="e.g. priyesh@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                      className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                     />
                   </div>
 
@@ -191,7 +191,7 @@ export default function ContactPage() {
                     <select
                       value={formData.program}
                       onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                      className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                     >
                       <option>CFA® Level I Comprehensive Preparation</option>
                       <option>FRM® Part I Masterclass</option>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                       placeholder="Explain your queries or profile details..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow resize-none"
+                      className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow resize-none"
                     />
                   </div>
 
@@ -229,7 +229,7 @@ export default function ContactPage() {
       </section>
 
       {/* Quick WhatsApp Action */}
-      <section className="py-16 bg-slate-950 border-t border-white/5 text-center px-6">
+      <section className="py-16 bg-transparent border-t border-white/5 text-center px-6">
         <div className="max-w-2xl mx-auto space-y-4">
           <h3 className="text-xl font-bold font-display text-white">Need a Faster Response?</h3>
           <p className="text-xs text-txt-secondary font-sans leading-relaxed">
@@ -247,7 +247,7 @@ export default function ContactPage() {
             </a>
             <button
               onClick={handleBooking}
-              className="px-6 py-3 bg-slate-900 border border-white/10 hover:border-accent-yellow text-white font-bold rounded-xl text-xs transition-all"
+              className="px-6 py-3 bg-white/5 border border-white/10 hover:border-accent-yellow text-white font-bold rounded-xl text-xs transition-all"
             >
               Request Call Back
             </button>

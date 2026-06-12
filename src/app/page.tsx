@@ -82,17 +82,8 @@ export default function HomePage() {
       <LeadPopupTrigger />
       
       {/* Hero Section */}
-      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[#02040a]">
-        {/* Background image overlay */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img 
-            className="absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity duration-700" 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop" 
-            alt="Finvision Corporate Skyline"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#02040a]/10 via-[#02040a]/40 to-[#02040a] z-10" />
-          <div className="absolute inset-0 bg-[#02040a]/30 z-10" />
-        </div>
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-transparent">
+        {/* No background image, using the vivid blue theme background directly */}
 
         {/* Center centered text in the middle */}
         <div className="relative z-20 flex min-h-[95vh] items-center justify-center px-6 pt-28 sm:pt-36 pb-12 w-full text-center">
@@ -112,9 +103,9 @@ export default function HomePage() {
       </section>
 
       {/* Course Categories & Cards */}
-      <section className="py-32 bg-slate-950/60 border-t border-white/5 px-6 relative">
+      <section className="py-32 bg-transparent border-t border-white/5 px-6 relative">
         {/* Soft background glow */}
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-white/10 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Centered Header */}
@@ -129,7 +120,7 @@ export default function HomePage() {
 
           {/* Centered inline text tabs with a premium sliding capsule */}
           <div className="flex justify-center pt-4 w-full max-w-full overflow-hidden px-4">
-            <div className="flex overflow-x-auto md:overflow-x-visible md:flex-wrap items-center justify-start md:justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner w-full max-w-full hide-scrollbar flex-nowrap md:flex-wrap">
+            <div className="flex overflow-x-auto md:overflow-x-visible md:flex-wrap items-center justify-start md:justify-center p-1.5 bg-white/10 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner w-full max-w-full hide-scrollbar flex-nowrap md:flex-wrap">
               {categories.map((cat) => {
                 const isActive = activeCategory === cat;
                 return (
@@ -159,7 +150,7 @@ export default function HomePage() {
             {/* Absolute Left Floating Arrow Button */}
             <button
               onClick={() => scrollCourses("left")}
-              className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer lg:opacity-0 lg:pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:left-4"
+              className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-transparent/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer lg:opacity-0 lg:pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:left-4"
               aria-label="Previous courses"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -170,7 +161,7 @@ export default function HomePage() {
             {/* Absolute Right Floating Arrow Button */}
             <button
               onClick={() => scrollCourses("right")}
-              className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-slate-950/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer lg:opacity-0 lg:pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:right-4"
+              className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-transparent/90 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow text-white items-center justify-center backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer lg:opacity-0 lg:pointer-events-none group-hover/carousel:opacity-100 group-hover/carousel:pointer-events-auto group-hover/carousel:right-4"
               aria-label="Next courses"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -284,9 +275,9 @@ export default function HomePage() {
       </section>
 
       {/* From Learning to Leadership in Finance (Why Us) Section */}
-      <section className="py-32 bg-slate-950 border-t border-white/5 px-6 relative overflow-hidden">
+      <section className="py-32 bg-transparent border-t border-white/5 px-6 relative overflow-hidden">
         {/* Subtle radial light effect */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10 space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -299,7 +290,7 @@ export default function HomePage() {
 
             {/* Clickable inline text tabs for Why Us - capsule sliding selector */}
             <div className="flex justify-center pt-8 w-full max-w-full overflow-hidden px-4">
-              <div className="flex overflow-x-auto md:overflow-x-visible md:flex-wrap items-center justify-start md:justify-center p-1.5 bg-slate-900/80 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner w-full max-w-full hide-scrollbar flex-nowrap md:flex-wrap">
+              <div className="flex overflow-x-auto md:overflow-x-visible md:flex-wrap items-center justify-start md:justify-center p-1.5 bg-white/10 border border-white/5 rounded-2xl md:rounded-full backdrop-blur-md relative gap-1 md:gap-2 shadow-inner w-full max-w-full hide-scrollbar flex-nowrap md:flex-wrap">
                 {[
                   "Guided by Experts",
                   "Learn on Live Markets",
@@ -338,7 +329,7 @@ export default function HomePage() {
           >
             {/* Card 1: Guided by Experts */}
             <div className="w-[280px] sm:w-[340px] md:w-[490px] shrink-0 snap-start glass-card-premium overflow-hidden flex flex-col md:flex-row group border border-white/5 hover:border-brand-blue/30 shadow-[0_0_30px_rgba(10,102,255,0.02)]">
-              <div className="p-8 flex-1 flex flex-col justify-between bg-gradient-to-br from-brand-blue/20 to-indigo-950/60">
+              <div className="p-8 flex-1 flex flex-col justify-between bg-gradient-to-br from-white/15 to-white/5">
                 <div className="space-y-4">
                   <h3 className="text-xl md:text-2xl font-black font-display text-white leading-tight">
                     Direct Mentor Advisory
@@ -351,7 +342,7 @@ export default function HomePage() {
                   <span className="text-[10px] text-accent-yellow uppercase tracking-widest font-bold">Guided by Experts</span>
                 </div>
               </div>
-              <div className="h-[220px] md:h-auto md:w-[45%] relative overflow-hidden bg-slate-900">
+              <div className="h-[220px] md:h-auto md:w-[45%] relative overflow-hidden bg-white/5">
                 <img 
                   src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop" 
                   alt="Mentors class"
@@ -375,7 +366,7 @@ export default function HomePage() {
                   <span className="text-[10px] text-accent-yellow uppercase tracking-widest font-bold">Learn on Live Markets</span>
                 </div>
               </div>
-              <div className="h-[220px] md:h-auto md:flex-1 relative overflow-hidden bg-slate-900">
+              <div className="h-[220px] md:h-auto md:flex-1 relative overflow-hidden bg-white/5">
                 <img 
                   src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" 
                   alt="Classroom session"
@@ -399,7 +390,7 @@ export default function HomePage() {
                   <span className="text-[10px] text-accent-yellow uppercase tracking-widest font-bold">Network That Hires</span>
                 </div>
               </div>
-              <div className="h-[220px] md:h-auto md:w-[45%] relative overflow-hidden bg-slate-900">
+              <div className="h-[220px] md:h-auto md:w-[45%] relative overflow-hidden bg-white/5">
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
                   alt="Student community"
@@ -423,7 +414,7 @@ export default function HomePage() {
                   <span className="text-[10px] text-accent-yellow uppercase tracking-widest font-bold">Land Your Finance Role</span>
                 </div>
               </div>
-              <div className="h-[220px] md:h-auto md:w-[45%] relative overflow-hidden bg-slate-900">
+              <div className="h-[220px] md:h-auto md:w-[45%] relative overflow-hidden bg-white/5">
                 <img 
                   src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" 
                   alt="Corporate meeting"
@@ -436,7 +427,7 @@ export default function HomePage() {
       </section>
 
       {/* Results Speak for Themselves Section */}
-      <section className="py-32 bg-slate-950 border-t border-white/5 px-6 relative">
+      <section className="py-32 bg-transparent border-t border-white/5 px-6 relative">
         <div className="max-w-7xl mx-auto space-y-20">
           
           {/* Header */}
@@ -475,7 +466,7 @@ export default function HomePage() {
           {/* Comparison Block */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8">
             {/* Left comparison dials */}
-            <div className="lg:col-span-5 flex flex-wrap sm:flex-nowrap items-center justify-center gap-4 sm:gap-8 md:gap-12 p-4 sm:p-8 rounded-3xl bg-[#050a18]/45 border border-white/5 shadow-inner">
+            <div className="lg:col-span-5 flex flex-wrap sm:flex-nowrap items-center justify-center gap-4 sm:gap-8 md:gap-12 p-4 sm:p-8 rounded-3xl bg-white/5 border border-white/5 shadow-inner">
               
               {/* Finvision Dial */}
               <div className="flex flex-col items-center space-y-4">
@@ -553,7 +544,7 @@ export default function HomePage() {
       </section>
 
       {/* Lead Instructor / Founder Section */}
-      <section className="py-32 bg-slate-950 border-t border-white/5 px-6 relative">
+      <section className="py-32 bg-transparent border-t border-white/5 px-6 relative">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Header */}
           <div className="space-y-3">
@@ -568,7 +559,7 @@ export default function HomePage() {
           {/* Core Profile Banner Container */}
           <div className="glass-card-premium p-4 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden border border-white/5">
             {/* Subtle glow background */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
             {/* Left side text */}
             <div className="lg:col-span-4 space-y-6">
@@ -587,13 +578,13 @@ export default function HomePage() {
 
             {/* Center avatar representation */}
             <div className="lg:col-span-4 flex justify-center relative">
-              <div className="w-64 h-80 rounded-2xl bg-slate-900 border border-white/10 overflow-hidden relative group">
+              <div className="w-64 h-80 rounded-2xl bg-white/5 border border-white/10 overflow-hidden relative group">
                 <img 
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" 
                   alt="Ashwini Bajaj" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#02040a]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
 
@@ -604,7 +595,7 @@ export default function HomePage() {
               </p>
 
               {/* Academic Credentials Card */}
-              <div className="rounded-2xl border border-white/5 bg-[#030611]/80 p-6 space-y-3 shadow-md">
+              <div className="rounded-2xl border border-white/5 bg-white/10 p-6 space-y-3 shadow-md">
                 <div className="flex items-center gap-2 text-[10px] font-black text-accent-yellow uppercase tracking-wider">
                   <svg className="w-4 h-4 text-accent-yellow" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -621,8 +612,8 @@ export default function HomePage() {
       </section>
 
       {/* Why Finance Aspirants Vouch for Us (Testimonials) Section */}
-      <section className="py-32 bg-slate-950 border-t border-white/5 px-6 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[110px] pointer-events-none" />
+      <section className="py-32 bg-transparent border-t border-white/5 px-6 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-[110px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10 space-y-16">
           {/* Header */}
@@ -636,13 +627,13 @@ export default function HomePage() {
             <div className="flex gap-3">
               <button 
                 onClick={() => scrollTestimonials("left")}
-                className="w-12 h-12 rounded-full border border-white/10 hover:border-accent-yellow bg-slate-900 flex items-center justify-center text-white transition-all cursor-pointer focus:outline-none hover:scale-105 active:scale-95"
+                className="w-12 h-12 rounded-full border border-white/10 hover:border-accent-yellow bg-white/5 flex items-center justify-center text-white transition-all cursor-pointer focus:outline-none hover:scale-105 active:scale-95"
               >
                 ←
               </button>
               <button 
                 onClick={() => scrollTestimonials("right")}
-                className="w-12 h-12 rounded-full border border-white/10 hover:border-accent-yellow bg-slate-900 flex items-center justify-center text-white transition-all cursor-pointer focus:outline-none hover:scale-105 active:scale-95"
+                className="w-12 h-12 rounded-full border border-white/10 hover:border-accent-yellow bg-white/5 flex items-center justify-center text-white transition-all cursor-pointer focus:outline-none hover:scale-105 active:scale-95"
               >
                 →
               </button>
@@ -708,7 +699,7 @@ export default function HomePage() {
       </section>
 
       {/* Hiring Partners Logo Wall */}
-      <section className="py-20 bg-slate-950 border-t border-white/5 overflow-hidden">
+      <section className="py-20 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-txt-secondary">
             Our Graduates Work At Leading Global Institutions
@@ -732,7 +723,7 @@ export default function HomePage() {
       <section className="py-32 px-6 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-            <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+            <span className="px-4 py-1.5 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
               Your Journey
             </span>
             <h2 className="text-4xl md:text-5xl font-black font-display text-white leading-tight">
@@ -754,7 +745,7 @@ export default function HomePage() {
               { number: "04", title: "Direct Placement Interviews", desc: "Engage with our corporate hiring network to land premium analyst, consulting, or risk roles." }
             ].map((step, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
-                <div className="w-14 h-14 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center text-accent-yellow font-extrabold font-display text-lg mb-6 shadow-xl relative">
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent-yellow font-extrabold font-display text-lg mb-6 shadow-xl relative">
                   <div className="absolute inset-1 rounded-full border border-dashed border-accent-yellow/30 animate-spin-slow" />
                   {step.number}
                 </div>
@@ -767,10 +758,10 @@ export default function HomePage() {
       </section>
 
       {/* Mobile App Section */}
-      <section className="py-32 bg-slate-950/40 border-t border-white/5 px-6">
+      <section className="py-32 bg-transparent border-t border-white/5 px-6">
         <div className="max-w-7xl mx-auto rounded-3xl glass-card-premium p-4 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative overflow-hidden border border-white/5">
           {/* Decorative gradients */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="lg:col-span-7 space-y-6">
             <span className="px-3 py-1.5 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 rounded-full text-xs font-bold uppercase tracking-widest font-display flex items-center gap-2 w-fit">
@@ -784,13 +775,13 @@ export default function HomePage() {
               Study anywhere, anytime. Download our mobile application to watch recorded lectures offline, solve practice banks, participate in mock quizzes, and track your syllabus coverage metrics dynamically.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#" className="px-6 py-3 bg-slate-950 border border-white/10 hover:border-white/20 text-white font-bold rounded-xl text-xs flex items-center gap-3 transition-all">
+              <a href="#" className="px-6 py-3 bg-transparent border border-white/10 hover:border-white/20 text-white font-bold rounded-xl text-xs flex items-center gap-3 transition-all">
                 <div className="text-left">
                   <span className="block text-[8px] uppercase text-txt-secondary">Download on the</span>
                   <span className="text-xs font-extrabold font-display">App Store</span>
                 </div>
               </a>
-              <a href="#" className="px-6 py-3 bg-slate-950 border border-white/10 hover:border-white/20 text-white font-bold rounded-xl text-xs flex items-center gap-3 transition-all">
+              <a href="#" className="px-6 py-3 bg-transparent border border-white/10 hover:border-white/20 text-white font-bold rounded-xl text-xs flex items-center gap-3 transition-all">
                 <div className="text-left">
                   <span className="block text-[8px] uppercase text-txt-secondary">Get it on</span>
                   <span className="text-xs font-extrabold font-display">Google Play</span>
@@ -800,7 +791,7 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-5 flex justify-center relative">
-            <div className="w-64 h-[500px] border-[6px] border-slate-800 bg-slate-900 rounded-[3rem] shadow-2xl relative p-4 flex flex-col justify-between overflow-hidden">
+            <div className="w-64 h-[500px] border-[6px] border-slate-800 bg-white/5 rounded-[3rem] shadow-2xl relative p-4 flex flex-col justify-between overflow-hidden">
               <div className="w-28 h-4 bg-slate-800 rounded-full mx-auto mb-4" />
               <div className="flex-1 flex flex-col justify-center items-center text-center p-4">
                 <GraduationCap className="w-12 h-12 text-accent-yellow mb-4" />
@@ -808,8 +799,8 @@ export default function HomePage() {
                 <p className="text-[10px] text-txt-secondary max-w-[150px]">
                   50 mock questions ready for Quantitative Methods.
                 </p>
-                <div className="w-full bg-slate-950 rounded-lg p-2.5 mt-6 border border-white/5">
-                  <div className="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden mb-1">
+                <div className="w-full bg-transparent rounded-lg p-2.5 mt-6 border border-white/5">
+                  <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden mb-1">
                     <div className="w-3/5 h-full bg-brand-blue" />
                   </div>
                   <span className="text-[8px] text-txt-secondary block">60% Complete</span>
@@ -825,7 +816,7 @@ export default function HomePage() {
       <section className="py-32 px-6 relative border-t border-white/5">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+            <span className="px-4 py-1.5 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
               Common Queries
             </span>
             <h2 className="text-4xl font-black font-display text-white">
@@ -858,8 +849,8 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-slate-950 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-radial from-brand-blue/5 to-transparent pointer-events-none" />
+      <section className="py-24 px-6 bg-transparent border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <h2 className="text-4xl md:text-6xl font-black font-display text-white leading-tight">
             Ready to Accelerate Your <span className="text-gradient-gold text-glow-yellow">Finance Career</span>?

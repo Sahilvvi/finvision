@@ -34,9 +34,9 @@ export default function CoursesPage() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-white/10 to-transparent blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto text-center space-y-6 relative z-10">
-          <span className="px-3 py-1 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+          <span className="px-3 py-1 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
             Curated Certifications
           </span>
           <h1 className="text-4xl md:text-6xl font-black font-display text-white tracking-tight leading-tight">
@@ -53,7 +53,7 @@ export default function CoursesPage() {
         <div className="max-w-7xl mx-auto">
           
           {/* Filters Bar */}
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-slate-900/40 border border-white/5 rounded-2xl mb-12 backdrop-blur-md">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-white/10 border border-white/5 rounded-2xl mb-12 backdrop-blur-md">
             {/* Category selection */}
             <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
@@ -63,7 +63,7 @@ export default function CoursesPage() {
                   className={`px-4 py-2 rounded-xl text-xs font-bold font-display transition-all ${
                     selectedCategory === cat
                       ? "bg-accent-yellow text-accent-yellow-fg shadow-lg"
-                      : "bg-slate-950 border border-white/5 text-txt-secondary hover:text-white"
+                      : "bg-transparent border border-white/5 text-txt-secondary hover:text-white"
                   }`}
                 >
                   {cat}
@@ -78,7 +78,7 @@ export default function CoursesPage() {
                 placeholder="Search courses..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow transition-all"
               />
               <Search className="w-4 h-4 text-txt-secondary absolute left-3.5 top-3" />
             </div>
@@ -138,7 +138,7 @@ export default function CoursesPage() {
                   <div className="grid grid-cols-2 gap-3">
                     <Link
                       href={`/courses/${course.slug}`}
-                      className="py-3 bg-slate-900 border border-white/10 hover:border-white/20 text-white text-xs font-bold rounded-xl text-center transition-all"
+                      className="py-3 bg-white/5 border border-white/10 hover:border-white/20 text-white text-xs font-bold rounded-xl text-center transition-all"
                     >
                       Know More
                     </Link>
@@ -163,7 +163,7 @@ export default function CoursesPage() {
       </section>
 
       {/* Course Comparison Section */}
-      <section className="py-24 bg-slate-950/40 border-t border-white/5 px-6">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="px-3 py-1 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
@@ -181,14 +181,14 @@ export default function CoursesPage() {
           <div className="overflow-x-auto rounded-3xl border border-white/5">
             <table className="w-full border-collapse text-left text-xs md:text-sm">
               <thead>
-                <tr className="bg-slate-900 border-b border-white/10">
+                <tr className="bg-white/5 border-b border-white/10">
                   <th className="p-5 font-bold text-white font-display">Feature</th>
                   <th className="p-5 font-bold text-accent-yellow font-display">CFA® Prep</th>
                   <th className="p-5 font-bold text-accent-yellow font-display">FRM® Prep</th>
                   <th className="p-5 font-bold text-accent-yellow font-display">Financial Modeling</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 bg-slate-950/20">
+              <tbody className="divide-y divide-white/5 bg-transparent">
                 <tr>
                   <td className="p-5 font-bold text-white">Target Job Roles</td>
                   <td className="p-5 text-txt-secondary">Portfolio Mgmt, Equity Research, IB</td>
@@ -220,8 +220,8 @@ export default function CoursesPage() {
       </section>
 
       {/* Career Guidance Call CTA */}
-      <section className="py-20 px-6 bg-slate-950 border-t border-white/5 relative overflow-hidden text-center">
-        <div className="absolute inset-0 bg-radial from-brand-blue/5 to-transparent pointer-events-none" />
+      <section className="py-20 px-6 bg-transparent border-t border-white/5 relative overflow-hidden text-center">
+        <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black font-display text-white">
             Unsure Which Certification is Right?

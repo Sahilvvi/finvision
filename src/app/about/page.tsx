@@ -35,9 +35,9 @@ export default function AboutPage() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-white/10 to-transparent blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <span className="px-3 py-1 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+          <span className="px-3 py-1 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
             Our Legacy
           </span>
           <h1 className="text-4xl md:text-6xl font-black font-display text-white tracking-tight leading-tight">
@@ -70,12 +70,12 @@ export default function AboutPage() {
       </section>
 
       {/* Founder's Story */}
-      <section className="py-24 bg-slate-950/50 border-t border-white/5 px-6 relative">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Avatar representation */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-80 h-96 rounded-3xl bg-slate-900 border border-white/10 flex items-center justify-center text-xs text-txt-secondary relative overflow-hidden">
+            <div className="w-80 h-96 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-xs text-txt-secondary relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
               <div className="relative z-10 text-center p-6 mt-auto">
                 <h4 className="text-base font-bold text-white font-display">Ashwini Bajaj</h4>
@@ -106,7 +106,7 @@ export default function AboutPage() {
       <section className="py-24 px-6 relative border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="px-3 py-1 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+            <span className="px-3 py-1 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
               Journey Timeline
             </span>
             <h2 className="text-3xl font-black font-display text-white">How We Grown</h2>
@@ -116,7 +116,7 @@ export default function AboutPage() {
             {milestones.map((milestone, idx) => (
               <div key={idx} className="relative">
                 {/* Connector Node */}
-                <div className="absolute -left-[2.35rem] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-accent-yellow flex items-center justify-center">
+                <div className="absolute -left-[2.35rem] top-1.5 w-4 h-4 rounded-full bg-white/5 border-2 border-accent-yellow flex items-center justify-center">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent-yellow" />
                 </div>
                 <div className="space-y-1">
@@ -131,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 bg-slate-950/40 border-t border-white/5 px-6">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="px-3 py-1 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
@@ -145,7 +145,7 @@ export default function AboutPage() {
               const Icon = value.icon;
               return (
                 <div key={idx} className="p-8 rounded-3xl card-glass flex flex-col items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-accent-yellow shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-accent-yellow shrink-0">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold font-display text-white">{value.title}</h3>
@@ -158,8 +158,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTAs Split */}
-      <section className="py-24 px-6 border-t border-white/5 bg-slate-950/20 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-radial from-brand-blue/5 to-transparent pointer-events-none" />
+      <section className="py-24 px-6 border-t border-white/5 bg-transparent text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-radial from-white/10 to-transparent pointer-events-none" />
         <div className="max-w-3xl mx-auto space-y-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black font-display text-white">Join the Finvision Network</h2>
           <p className="text-sm text-txt-secondary max-w-lg mx-auto leading-relaxed">
@@ -174,7 +174,7 @@ export default function AboutPage() {
             </button>
             <Link
               href="/contact"
-              className="px-8 py-4 bg-slate-900 border border-white/10 hover:border-white/20 text-white font-bold text-sm rounded-xl transition-all flex items-center justify-center gap-2"
+              className="px-8 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white font-bold text-sm rounded-xl transition-all flex items-center justify-center gap-2"
             >
               <span>Contact Partner Desk</span>
               <ArrowUpRight className="w-4 h-4 text-accent-yellow" />

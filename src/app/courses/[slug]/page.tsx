@@ -18,7 +18,7 @@ export default function CourseDetailPage() {
 
   if (!course) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-6 text-center">
+      <div className="min-h-screen bg-transparent flex flex-col justify-center items-center p-6 text-center">
         <h1 className="text-3xl font-bold text-white mb-2">Program Not Found</h1>
         <p className="text-sm text-txt-secondary mb-6">The requested course URL could not be resolved.</p>
         <Link href="/courses" className="px-6 py-3 bg-brand-blue hover:bg-brand-blue-hover text-white text-xs font-bold rounded-xl">
@@ -94,7 +94,7 @@ export default function CourseDetailPage() {
               </button>
               <button
                 onClick={handleBooking}
-                className="px-8 py-4 bg-slate-900 border border-white/10 hover:border-white/20 text-white font-bold text-sm rounded-xl transition-all"
+                className="px-8 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white font-bold text-sm rounded-xl transition-all"
               >
                 Download Syllabus Brochure
               </button>
@@ -120,7 +120,7 @@ export default function CourseDetailPage() {
       </section>
 
       {/* Program Deep Overview */}
-      <section className="py-24 bg-slate-950/40 border-t border-white/5 px-6">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="space-y-4 text-center">
             <span className="px-3 py-1 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
@@ -179,11 +179,11 @@ export default function CourseDetailPage() {
       </section>
 
       {/* Mentor Highlight */}
-      <section className="py-24 bg-slate-950/40 border-t border-white/5 px-6">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-72 h-80 rounded-3xl bg-slate-900 border border-white/10 flex items-center justify-center text-xs text-txt-muted overflow-hidden relative">
+            <div className="w-72 h-80 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-xs text-txt-muted overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
               <div className="relative z-10 text-center p-6 mt-auto">
                 <h4 className="text-base font-bold text-white font-display">Ashwini Bajaj</h4>
@@ -221,7 +221,7 @@ export default function CourseDetailPage() {
           </div>
           <ul className="space-y-4">
             {course.outcomes.map((outcome, idx) => (
-              <li key={idx} className="flex items-start gap-3 p-4 bg-slate-900/30 border border-white/5 rounded-2xl">
+              <li key={idx} className="flex items-start gap-3 p-4 bg-white/10 border border-white/5 rounded-2xl">
                 <CheckCircle className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
                 <span className="text-xs md:text-sm text-txt-secondary leading-relaxed">{outcome}</span>
               </li>
@@ -231,7 +231,7 @@ export default function CourseDetailPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-slate-950 border-t border-white/5 px-6 text-center relative overflow-hidden">
+      <section className="py-20 bg-transparent border-t border-white/5 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-radial from-brand-blue/5 to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black font-display text-white">Secure Your Batch Enrollment</h2>

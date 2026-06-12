@@ -112,7 +112,7 @@ export default function FloatingWidget() {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="w-full max-w-md bg-slate-900 border border-white/10 rounded-2xl p-6 shadow-2xl relative"
+              className="w-full max-w-md bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl relative"
             >
               <button
                 onClick={() => setShowForm(false)}
@@ -154,7 +154,7 @@ export default function FloatingWidget() {
                       placeholder="e.g. Rahul Sharma"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                     />
                   </div>
 
@@ -168,7 +168,7 @@ export default function FloatingWidget() {
                       placeholder="e.g. rahul@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                     />
                   </div>
 
@@ -182,7 +182,7 @@ export default function FloatingWidget() {
                       placeholder="e.g. +91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                     />
                   </div>
 
@@ -193,7 +193,7 @@ export default function FloatingWidget() {
                     <select
                       value={formData.course}
                       onChange={(e) => setFormData({ ...formData, course: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                     >
                       <option>CFA® Level I Comprehensive Preparation</option>
                       <option>FRM® Part I Masterclass</option>

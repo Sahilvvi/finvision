@@ -84,7 +84,7 @@ export default function CareerGuidancePage() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-white/10 to-transparent blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <span className="px-3 py-1 bg-accent-yellow/10 text-accent-yellow border border-accent-yellow/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
             Career Guidance & Placements
@@ -102,7 +102,7 @@ export default function CareerGuidancePage() {
       <section className="py-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="px-3 py-1 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+            <span className="px-3 py-1 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
               Strategic Services
             </span>
             <h2 className="text-3xl font-black font-display text-white">
@@ -118,7 +118,7 @@ export default function CareerGuidancePage() {
               const Icon = service.icon;
               return (
                 <div key={idx} className="p-6 sm:p-8 rounded-3xl card-glass flex flex-col sm:flex-row gap-6 items-start">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-accent-yellow shrink-0">
+                  <div className="w-14 h-14 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-accent-yellow shrink-0">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div className="space-y-2">
@@ -133,7 +133,7 @@ export default function CareerGuidancePage() {
       </section>
 
       {/* Form & Consultation split section */}
-      <section className="py-24 bg-slate-950/50 border-t border-white/5 px-6 relative">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Trust points */}
@@ -150,7 +150,7 @@ export default function CareerGuidancePage() {
 
             <div className="space-y-6 pt-4">
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
                   <Users className="w-5 h-5" />
                 </div>
                 <div>
@@ -160,7 +160,7 @@ export default function CareerGuidancePage() {
               </div>
 
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-yellow shrink-0">
                   <Briefcase className="w-5 h-5" />
                 </div>
                 <div>
@@ -201,7 +201,7 @@ export default function CareerGuidancePage() {
                         placeholder="e.g. Priyesh Sen"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                        className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                       />
                     </div>
                     <div>
@@ -214,7 +214,7 @@ export default function CareerGuidancePage() {
                         placeholder="e.g. +91 9876543210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                        className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                       />
                     </div>
                   </div>
@@ -229,7 +229,7 @@ export default function CareerGuidancePage() {
                       placeholder="e.g. priyesh@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                     />
                   </div>
 
@@ -240,7 +240,7 @@ export default function CareerGuidancePage() {
                     <select
                       value={formData.qualification}
                       onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                     >
                       <option>Undergraduate Student (Commerce / Finance)</option>
                       <option>Undergraduate Student (Engineering / Tech)</option>
@@ -257,7 +257,7 @@ export default function CareerGuidancePage() {
                     <select
                       value={formData.interest}
                       onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                      className="w-full px-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                     >
                       <option>Investment Banking & Valuations</option>
                       <option>Financial Risk Management (FRM)</option>
@@ -280,7 +280,7 @@ export default function CareerGuidancePage() {
       </section>
 
       {/* WhatsApp placement support cell quick action */}
-      <section className="py-16 bg-slate-950 border-t border-white/5 text-center px-6">
+      <section className="py-16 bg-transparent border-t border-white/5 text-center px-6">
         <div className="max-w-2xl mx-auto space-y-4">
           <h3 className="text-xl font-bold font-display text-white">Need an Instant Response?</h3>
           <p className="text-xs text-txt-secondary">

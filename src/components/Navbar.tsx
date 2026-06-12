@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight, GraduationCap } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { DottedCrescentWhite } from "@/components/BrandLogo";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -59,13 +60,13 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
           scrolled
-            ? "bg-slate-950/75 backdrop-blur-md border-b border-white/5 py-3"
+            ? "bg-transparent backdrop-blur-md border-b border-white/5 py-3"
             : "bg-transparent py-0"
         }`}
       >
         {/* Announcement Bar collapses on scroll */}
         <div 
-          className={`w-full bg-slate-950 border-b border-white/5 overflow-hidden transition-all duration-500 flex items-center justify-center ${
+          className={`w-full bg-transparent border-b border-white/5 overflow-hidden transition-all duration-500 flex items-center justify-center ${
             scrolled ? "h-0 py-0 border-none opacity-0" : "h-9 py-2"
           }`}
         >
@@ -89,10 +90,8 @@ export default function Navbar() {
         <div className={`w-full max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${scrolled ? "" : "pt-4 pb-4"}`}>
           {/* Logo */}
           <div className="flex items-center gap-4 shrink-0">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center shadow-lg shadow-brand-blue/20 transition-transform group-hover:scale-105 shrink-0">
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <DottedCrescentWhite className="w-10 h-10 transition-transform group-hover:scale-105 shrink-0" />
               <span className="text-xl font-extrabold font-display tracking-tight text-white shrink-0">
                 FIN<span className="text-accent-yellow">VISION</span>
               </span>
@@ -151,7 +150,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 pt-28 pb-8 px-6 bg-slate-950/95 backdrop-blur-lg lg:hidden flex flex-col justify-start overflow-y-auto gap-8"
+            className="fixed inset-0 z-30 pt-28 pb-8 px-6 bg-transparent backdrop-blur-lg lg:hidden flex flex-col justify-start overflow-y-auto gap-8"
           >
             <nav className="flex flex-col gap-6">
               {navLinks.map((link) => {

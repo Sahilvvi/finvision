@@ -60,12 +60,12 @@ export default function LeadPopupTrigger() {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-transparent backdrop-blur-md">
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
-            className="w-full max-w-lg bg-slate-900 border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden"
+            className="w-full max-w-lg bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden"
           >
             {/* Top decorative glow */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none" />
@@ -127,7 +127,7 @@ export default function LeadPopupTrigger() {
                       placeholder="e.g. Rahul Mehta"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950/80 border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                      className="w-full px-4 py-3 bg-transparent border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                     />
                   </div>
 
@@ -141,7 +141,7 @@ export default function LeadPopupTrigger() {
                       placeholder="e.g. +91 99999 88888"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-950/80 border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                      className="w-full px-4 py-3 bg-transparent border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                     />
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export default function LeadPopupTrigger() {
                     placeholder="e.g. rahul@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-950/80 border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                    className="w-full px-4 py-3 bg-transparent border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                   />
                 </div>
 
@@ -167,7 +167,7 @@ export default function LeadPopupTrigger() {
                   <select
                     value={formData.course}
                     onChange={(e) => setFormData({ ...formData, course: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-950/80 border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
+                    className="w-full px-4 py-3 bg-transparent border border-white/15 rounded-xl text-white focus:outline-none focus:border-accent-yellow text-sm transition-all"
                   >
                     <option>CFA® Level I Comprehensive Preparation</option>
                     <option>FRM® Part I Masterclass</option>

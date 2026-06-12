@@ -40,9 +40,9 @@ export default function ResourcesPage() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-white/10 to-transparent blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <span className="px-3 py-1 bg-brand-blue/10 text-brand-blue border border-brand-blue/20 rounded-full text-xs font-bold uppercase tracking-widest font-display">
+          <span className="px-3 py-1 bg-white/20 text-white border border-white/30 rounded-full text-xs font-bold uppercase tracking-widest font-display">
             Learning Vault
           </span>
           <h1 className="text-4xl md:text-6xl font-black font-display text-white tracking-tight leading-tight">
@@ -59,7 +59,7 @@ export default function ResourcesPage() {
         <div className="max-w-7xl mx-auto">
           
           {/* Filters Bar */}
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-slate-900/40 border border-white/5 rounded-2xl mb-12 backdrop-blur-md">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-white/10 border border-white/5 rounded-2xl mb-12 backdrop-blur-md">
             <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
@@ -68,7 +68,7 @@ export default function ResourcesPage() {
                   className={`px-4 py-2 rounded-xl text-xs font-bold font-display transition-all ${
                     selectedCategory === cat
                       ? "bg-accent-yellow text-accent-yellow-fg shadow-lg"
-                      : "bg-slate-950 border border-white/5 text-txt-secondary hover:text-white"
+                      : "bg-transparent border border-white/5 text-txt-secondary hover:text-white"
                   }`}
                 >
                   {cat}
@@ -82,7 +82,7 @@ export default function ResourcesPage() {
                 placeholder="Search resources..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow transition-all"
               />
               <Search className="w-4 h-4 text-txt-secondary absolute left-3.5 top-3" />
             </div>
@@ -123,7 +123,7 @@ export default function ResourcesPage() {
                   {res.type === "Download" ? (
                     <a
                       href={res.link}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-slate-900 border border-white/10 hover:border-accent-yellow text-white rounded-lg transition-colors font-bold uppercase"
+                      className="flex items-center gap-1 px-3 py-1.5 bg-white/5 border border-white/10 hover:border-accent-yellow text-white rounded-lg transition-colors font-bold uppercase"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>Download PDF</span>
@@ -159,7 +159,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-24 bg-slate-950/50 border-t border-white/5 px-6 relative">
+      <section className="py-24 bg-transparent border-t border-white/5 px-6 relative">
         <div className="max-w-4xl mx-auto rounded-3xl card-glass p-6 sm:p-8 md:p-16 text-center space-y-6 relative overflow-hidden">
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
           
@@ -186,7 +186,7 @@ export default function ResourcesPage() {
                   placeholder="Enter your email address"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 bg-slate-950 border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
+                  className="flex-1 px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white text-xs focus:outline-none focus:border-accent-yellow"
                 />
                 <button
                   type="submit"

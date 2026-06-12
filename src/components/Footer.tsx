@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { GraduationCap, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { DottedCrescentWhite } from "@/components/BrandLogo";
 
 const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -31,18 +32,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 border-t border-white/5 pt-16 pb-8 relative overflow-hidden">
+    <footer className="bg-transparent border-t border-white/5 pt-16 pb-8 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-radial from-white/10 to-transparent blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 mb-6 group">
+              <DottedCrescentWhite className="w-10 h-10 transition-transform group-hover:scale-105" />
               <span className="text-xl font-extrabold font-display tracking-tight text-white">
                 FIN<span className="text-accent-yellow">VISION</span>
               </span>
@@ -51,16 +50,16 @@ export default function Footer() {
               Empowering the next generation of finance professionals with institutional-grade knowledge, industry-validated certifications, and direct career placement pipelines.
             </p>
             <div className="flex gap-4">
-              <a href="https://linkedin.com" className="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
+              <a href="https://linkedin.com" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com" className="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
+              <a href="https://instagram.com" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://youtube.com" className="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
+              <a href="https://youtube.com" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
                 <Youtube className="w-4 h-4" />
               </a>
-              <a href="https://wa.me/919999999999" className="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
+              <a href="https://wa.me/919999999999" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-accent-yellow hover:text-accent-yellow flex items-center justify-center text-txt-secondary transition-all">
                 <MessageCircle className="w-4 h-4" />
               </a>
             </div>
